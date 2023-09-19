@@ -1,4 +1,4 @@
-html {
+hfml {
   background-color: #f1f5f9;
   font-family: sans-serif;
 }
@@ -60,6 +60,15 @@ h1 {
 
 .expanded {
   display: unset;
+}
+
+html.dark {
+  background-color: #0d0950;
+  color: #fff;
+}
+
+.dark .nav-links a {
+  color: #fff;
 }
 
 @media screen and (min-width: 636px) {
