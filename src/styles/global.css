@@ -1,13 +1,15 @@
-hfml {
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap');
+
+html {
   background-color: #f1f5f9;
-  font-family: sans-serif;
+  font-family: 'Roboto', sans-serif;
 }
 
 body {
   margin: 0 auto;
   width: 100%;
-  max-width: 80ch;
-  padding: 1rem;
+  /*max-width: 100ch;*/
+   padding: 1rem; 
   line-height: 1.5;
 }
 
@@ -18,6 +20,11 @@ body {
 h1 {
   margin: 1rem 0;
   font-size: 2.5rem;
+}
+
+.img_thumb {
+  padding-left: 10px;
+  padding-bottom: 10px;
 }
 
 /* nav styles */
@@ -63,7 +70,7 @@ h1 {
 }
 
 html.dark {
-  background-color: #0d0950;
+  background-color: #000000;
   color: #fff;
 }
 

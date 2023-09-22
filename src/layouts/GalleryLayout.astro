@@ -1,0 +1,43 @@
+---
+import BaseLayout from './BaseLayout.astro';
+import { getEntry } from 'astro:content';
+import { Image } from 'astro:assets';
+import { Debug } from 'astro:components';
+
+const entry = Astro.props;
+const params = Astro.params;
+const post = await getEntry("blog", params.slug);
+const images = post.data.images;
+const descriptions = post.data.descriptions;
+---
+<BaseLayout pageTitle={`Gallerie ${post.data.title}`}>
+  <slot />
+{images.map((image, index) =>
+      <span class="img_thumb">
+        <a class="spotlight" 
+          href={image.src}>
+      <Image src={image} alt={descriptions[index]} width="300"/>
+        </a>
+      </span>
+    )}
+<script src="../scripts/spotlight.bundle.js" />
+  <style>
+  a {
+    color: #00539F;
+  }
+
+  .tags {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  .tag {
+    margin: 0.25em;
+    border: dotted 1px #a1a1a1;
+    border-radius: .5em;
+    padding: .5em 1em;
+    font-size: 1.15em;
+    background-color: #F8FCFD;
+  }
+  </style>
+</BaseLayout>
